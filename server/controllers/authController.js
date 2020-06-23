@@ -38,11 +38,11 @@ module.exports = {
     } else {
       const authenticated = bcrypt.compareSync(password, user[0].password);
       if (!authenticated) {
-        return res.status(403).send("Wrong password.");
+        return res.status(403).send("Incorrect password");
       } else {
         if (authenticated) {
           req.session.user = {
-            userID: user[0].id,
+            userId: user[0].id,
           };
           res.status(200).send(req.session);
         }
@@ -51,7 +51,7 @@ module.exports = {
   },
 
   getUser: (req, res) => {
-    if ((req, session.user)) {
+    if (req.session.user) {
       return res.status(200).send(req.session.user);
     } else {
       res.sendStatus(404);

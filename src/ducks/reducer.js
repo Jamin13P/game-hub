@@ -4,18 +4,18 @@ const initialState = {
   profilePic: "",
 };
 
-const GET_USER = "GET_USER";
+const SET_USER = "SET_USER";
 
-export function getUser(user) {
+export function setUser(user) {
   return {
-    type: GET_USER,
+    type: SET_USER,
     payload: user,
   };
 }
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case GET_USER:
+    case SET_USER:
       return Object.assign({}, state, action.payload);
     default:
       return state;

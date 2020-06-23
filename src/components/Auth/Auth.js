@@ -1,30 +1,54 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios"
+import React, { useState } from "react";
+import { setUser } from "../../ducks/reducer";
+import { connect } from "react-redux";
+import axios from "axios";
 
 const Auth = (props) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
+  function register() {
+    axios
+      .post("/auth/register", { username, password })
+      .then((res) => {
+        props.setUser(res.data);
+        props.history.push("/home");
+      })
+      .catch((err) => {
+        alert(err.response.request.response);
+      });
+  }
 
-
-  useEffect( () => {
-    console.log("Test")
-    // axios
-    // .post("/auth/register")
-    // .then(res => {
-    //   setUsername(res.data.results)
-    //   setPassword(res.data.results)
-    //   props.history.push("/home")
-    // })
-  }, [])
+  function login() {
+    axios
+      .post("/auth/login", { username, password })
+      .then((res) => {
+        props.setUser(res.data);
+        props.history.push("/home");
+      })
+      .catch((err) => {
+        alert(err.response.request.response);
+      });
+  }
 
   return (
-  <div>
-    <input placeholder="Username" type="text" onChange={e => setUsername(e.target.value)} />
-    <input placeholder="Password" type="password" onChange={e => setPassword(e.target.value)} />
-    <button>Login</button>
-    <button>Register</button>
-  </div>)
+    <div>
+      <input
+        placeholder="Username"
+        type="text"
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <input
+        placeholder="Password"
+        type="password"
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button onClick={login}>Login</button>
+      <button onClick={register}>Register</button>
+    </div>
+  );
 };
 
-export default Auth;
+const mapStateToProps = (reduxState) => reduxState;
+
+export default connect(mapStateToProps, { setUser })(Auth);
