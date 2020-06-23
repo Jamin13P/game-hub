@@ -32,4 +32,9 @@ app.use(
   })
 );
 
+// authorization endpoints
 app.post("/auth/register", authCtrl.register);
+app.post("/auth/login", authCtrl.login);
+app.get("/auth/user", authCtrl.getUser);
+app.post("/auth/logout", authCtrl.logout);
+

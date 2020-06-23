@@ -25,4 +25,41 @@ module.exports = {
     };
     res.status(201).send(req.session.user);
   },
+
+  login: async (req, res) => {
+    const db = req.app.get("db");
+    const { username, password } = req.body;
+    const user = await db.get_user(username);
+
+    if (!user[0]) {
+      return res
+        .status(401)
+        .send("User hasn't been created. Please create user.");
+    } else {
+      const authenticated = bcrypt.compareSync(password, user[0].password);
+      if (!authenticated) {
+        return res.status(403).send("Wrong password.");
+      } else {
+        if (authenticated) {
+          req.session.user = {
+            userID: user[0].id,
+          };
+          res.status(200).send(req.session);
+        }
+      }
+    }
+  },
+
+  getUser: (req, res) => {
+    if ((req, session.user)) {
+      return res.status(200).send(req.session.user);
+    } else {
+      res.sendStatus(404);
+    }
+  },
+
+  logout: (req, res) => {
+    req.session.destroy();
+    res.sendStatus(200);
+  },
 };
