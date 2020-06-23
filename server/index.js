@@ -3,8 +3,8 @@ const massive = require("massive");
 const express = require("express");
 const session = require("express-session");
 const app = express();
-const authCtrl = require("./controllers/authController")
-const postCtrl = require("./controllers/postController")
+const authCtrl = require("./controllers/authController");
+const postCtrl = require("./controllers/postController");
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 
@@ -31,3 +31,5 @@ app.use(
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 365 * 80 },
   })
 );
+
+app.post("/auth/register", authCtrl.register);
