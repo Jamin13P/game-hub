@@ -43,8 +43,8 @@ const Auth = (props) => {
         type="password"
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={login}>Login</button>
-      <button onClick={register}>Register</button>
+      <button onClick={login} >Login</button>
+      <button onClick={register} >Register</button>
     </div>
   );
 };
