@@ -41,8 +41,9 @@ module.exports = {
         return res.status(403).send("Incorrect password");
       } else {
         if (authenticated) {
+          console.log(user[0])
           req.session.user = {
-            userId: user[0].id,
+            userId: user[0].user_id,
           };
           res.status(200).send(req.session);
         }
