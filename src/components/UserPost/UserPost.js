@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 const UserPost = (props) => {
-    const {editing, toggleEditing, editPost, deletePost, elem} = props
+  const { editing, toggleEditing, editPost, deletePost, elem } = props;
 
-    const [post, setPost] = useState(elem.post);
+  const [post, setPost] = useState(elem.post);
   const [picture, setPicture] = useState(elem.picture);
 
   return (
@@ -27,10 +27,16 @@ const UserPost = (props) => {
       ) : (
         <p>{elem.post}</p>
       )}
-      {editing ? <button onClick={() => editPost(elem.post_id, post, picture)} >Save</button> : <button onClick={toggleEditing}>Edit</button>}
-      <button onClick={() => deletePost(elem.post_id)}>Delete</button>
+      {editing ? (
+        <button onClick={() => editPost(elem.post_id, post, picture)}>
+          Save
+        </button>
+      ) : (
+        <button onClick={toggleEditing}>Edit</button>
+      )}
+      {editing ? <button onClick={toggleEditing}>Cancel</button> : <button onClick={() => deletePost(elem.post_id)}>Delete</button>}
     </div>
   );
 };
 
-export default UserPost
+export default UserPost;

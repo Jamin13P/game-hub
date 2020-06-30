@@ -29,7 +29,6 @@ const Account = (props) => {
     axios
       .put(`/api/post/${post_id}`, { post, picture })
       .then(() => {
-        console.log("Post was edited");
         getUserPosts();
       })
       .catch((err) => {
@@ -46,7 +45,6 @@ const Account = (props) => {
     axios
       .delete(`/api/post/${post_id}`)
       .then(() => {
-        console.log("Post was deleted");
         getUserPosts();
       })
       .catch((err) => {
