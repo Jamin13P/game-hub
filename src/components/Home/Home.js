@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./Home.css"
 
 const Home = (props) => {
   const [posts, setPosts] = useState([]);
@@ -21,7 +22,7 @@ const Home = (props) => {
         return (
           <div key={elem.post_id}>
             <h4>{elem.username}</h4>
-            <img alt="IMG" src={`${elem.picture}`} />
+            {elem.picture === null || elem.picture === "" ? null : <img className="picture" src={elem.picture} alt="IMG" />}
             <p>{elem.post}</p>
           </div>
         );
@@ -29,5 +30,7 @@ const Home = (props) => {
     </div>
   );
 };
+
+const mapStateToProps = (reduxState) => reduxState
 
 export default Home;

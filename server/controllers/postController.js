@@ -12,41 +12,13 @@ module.exports = {
       });
   },
 
-  getRandomPostSelected: (req, res) => {
-    const db = req.app.get("db");
-    const { post_id } = req.params;
-
-    db.get_random_post_selected(post_id)
-      .then((post) => {
-        res.status(200).send(post);
-      })
-      .catch((err) => {
-        res.status(500).send(err);
-        console.log(err);
-      });
-  },
-
   getUserPosts: (req, res) => {
     const db = req.app.get("db");
-    const { user_id } = req.params;
+    const { userId } = req.session.user;
 
-    db.get_user_posts(user_id)
+    db.get_user_posts(userId)
       .then((posts) => {
         res.status(200).send(posts);
-      })
-      .catch((err) => {
-        res.status(500).send(err);
-        console.log(err);
-      });
-  },
-
-  getUserPost: (req, res) => {
-    const db = req.app.get("db");
-    const { user_id, post_id } = req.params;
-
-    db.get_user_post(user_id, post_id)
-      .then((post) => {
-        res.status(200).send(post);
       })
       .catch((err) => {
         res.status(500).send(err);
@@ -58,7 +30,6 @@ module.exports = {
     const db = req.app.get("db");
     const { post, picture } = req.body;
     const { userId } = req.session.user;
-    console.log(req.session);
 
     db.create_post(userId, post, picture)
       .then((post) => {

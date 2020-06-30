@@ -1,14 +1,52 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Creator = (props) => {
+  const [newPost, setNewPost] = useState("");
+  const [newPicture, setNewPicture] = useState("");
+  const [addPicture, setAddPicture] = useState(false);
 
-  const [newPost, setNewPost] = useState("")
+  function toggleAddPicture() {
+    setAddPicture(!addPicture);
+  }
+
+  function resetNewPicture() {
+    setNewPicture("");
+  }
+
+  function handleCancel() {
+    toggleAddPicture();
+    resetNewPicture();
+  }
+
+  function createPost() {
+    axios
+      .post("/api/newpost", { newPicture, newPost })
+      .then(() => {
+        props.history.push("/account");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
   return (
     <div>
-      <button>Share</button>
+      {newPost === "" ? <button className="decoy-button" >Share</button> : <button className="real-button" onClick={createPost} >Share</button>}
+      {!addPicture ? (
+        <button onClick={toggleAddPicture}>Add Picture URL</button>
+      ) : (
+        <button onClick={handleCancel}>Cancel Picture</button>
+      )}
+      {addPicture ? (
+        <input
+          placeholder="Picture URL here."
+          type="text"
+          onChange={(e) => setNewPicture(e.target.value)}
+        />
+      ) : null}
       <input
-        placeholder="Share a thought you have about a video game or an experience you've had about a video game."
+        placeholder="What do you want to share?"
         type="text"
         onChange={(e) => setNewPost(e.target.value)}
       />

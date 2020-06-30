@@ -40,9 +40,7 @@ app.post("/auth/logout", authCtrl.logout);
 
 // post endpoints
 app.get("/api/randomposts", postCtrl.getRandomPosts);
-app.get("/api/randompost/:post_id", postCtrl.getRandomPostSelected);
 app.get("/api/userposts/:user_id", postCtrl.getUserPosts);
-app.get("/api/userpost/:user_id/:post_id", postCtrl.getUserPost);
 app.post("/api/newpost", postCtrl.createPost);
 app.put("/api/post/:post_id", postCtrl.editPost);
 app.delete("/api/post/:post_id", postCtrl.deletePost);
