@@ -45,7 +45,7 @@ module.exports = {
           req.session.user = {
             userId: user[0].user_id,
           };
-          res.status(200).send(req.session);
+          res.status(200).send(req.session.user);
         }
       }
     }

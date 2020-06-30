@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 const Creator = (props) => {
@@ -20,6 +20,7 @@ const Creator = (props) => {
   }
 
   function createPost() {
+    console.log(newPicture, newPost)
     axios
       .post("/api/newpost", { newPicture, newPost })
       .then(() => {

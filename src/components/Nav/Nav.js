@@ -5,6 +5,16 @@ import axios from "axios";
 import { withRouter } from "react-router-dom";
 
 const Nav = (props) => {
+  useEffect(() => {
+    axios
+      .get("/auth/user")
+      .then((res) => {
+        props.setUser(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   function logout() {
     axios
@@ -20,10 +30,12 @@ const Nav = (props) => {
 
   return (
     <div>
-      <button onClick={() => props.history.push("/home")} >Home</button>
-      <button onClick={() => props.history.push("/creator")} >Create Post</button>
-      <button onClick={() => props.history.push("/account")} >Account</button>
-      <button onClick={logout} >Logout</button>
+      <button onClick={() => props.history.push("/home")}>Home</button>
+      <button onClick={() => props.history.push("/creator")}>
+        Create Post
+      </button>
+      <button onClick={() => props.history.push("/account")}>Account</button>
+      <button onClick={logout}>Logout</button>
     </div>
   );
 };

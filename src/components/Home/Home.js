@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {connect} from "react-redux"
 import axios from "axios";
 import "./Home.css"
 
@@ -33,4 +34,4 @@ const Home = (props) => {
 
 const mapStateToProps = (reduxState) => reduxState
 
-export default Home;
+export default connect(mapStateToProps)(Home);

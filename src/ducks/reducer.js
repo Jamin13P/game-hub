@@ -26,14 +26,6 @@ export default function reducer(state = initialState, action) {
   switch (action.type) {
     case SET_USER:
       return {...state, user: action.payload};
-    case LOGOUT_USER:
-      return {...state, ...action.payload}
-    case GET_USER + "_PENDING":
-      return state
-    case GET_USER + "_FULFILLED":
-      return {...state, user: action.payload.data}
-    case GET_USER + "_REJECTED":
-      return initialState
     default:
       return state;
   }

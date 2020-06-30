@@ -14,9 +14,9 @@ module.exports = {
 
   getUserPosts: (req, res) => {
     const db = req.app.get("db");
-    const { userId } = req.session.user;
+    const { user_id } = req.params;
 
-    db.get_user_posts(userId)
+    db.get_user_posts(user_id)
       .then((posts) => {
         res.status(200).send(posts);
       })
@@ -28,10 +28,12 @@ module.exports = {
 
   createPost: (req, res) => {
     const db = req.app.get("db");
-    const { post, picture } = req.body;
+    const { newPost, newPicture } = req.body;
     const { userId } = req.session.user;
 
-    db.create_post(userId, post, picture)
+    console.log(req.body)
+
+    db.create_post(userId, newPost, newPicture)
       .then((post) => {
         res.status(200).send(post);
       })
