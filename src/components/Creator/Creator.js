@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../../styles/Creator.css"
+import "../../styles/Creator.css";
 
 const Creator = (props) => {
   const [newPost, setNewPost] = useState("");
@@ -21,7 +21,7 @@ const Creator = (props) => {
   }
 
   function createPost() {
-    console.log(newPicture, newPost)
+    console.log(newPicture, newPost);
     axios
       .post("/api/newpost", { newPicture, newPost })
       .then(() => {
@@ -34,24 +34,42 @@ const Creator = (props) => {
 
   return (
     <div className="Creator">
-      {newPost === "" ? <button className="decoy-button" >Share</button> : <button className="real-button" onClick={createPost} >Share</button>}
-      {!addPicture ? (
-        <button onClick={toggleAddPicture}>Add Picture URL</button>
-      ) : (
-        <button onClick={handleCancel}>Cancel Picture</button>
-      )}
-      {addPicture ? (
-        <input
-          placeholder="Picture URL here."
+      <div className="interact">
+        <div className="button">
+          {newPost === "" ? (
+            <button className="decoy-button">
+              <p>Share</p>
+            </button>
+          ) : (
+            <button className="real-button" onClick={createPost}>
+              <p>Share</p>
+            </button>
+          )}
+          {!addPicture ? (
+            <button onClick={toggleAddPicture}>
+              <p>Add Picture URL</p>
+            </button>
+          ) : (
+            <button onClick={handleCancel}>
+              <p>Cancel Picture</p>
+            </button>
+          )}
+        </div>
+        {addPicture ? (
+          <input
+            className="picture"
+            placeholder="Picture URL here."
+            type="text"
+            onChange={(e) => setNewPicture(e.target.value)}
+          />
+        ) : null}
+        <textarea
+          className="post"
+          placeholder="What do you want to share?"
           type="text"
-          onChange={(e) => setNewPicture(e.target.value)}
+          onChange={(e) => setNewPost(e.target.value)}
         />
-      ) : null}
-      <input
-        placeholder="What do you want to share?"
-        type="text"
-        onChange={(e) => setNewPost(e.target.value)}
-      />
+      </div>
     </div>
   );
 };

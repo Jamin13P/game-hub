@@ -1,5 +1,85 @@
 .Creator {
   background-color: lightblue;
-  height: 85vh;
+  height: 84vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.interact {
+  height: 60vh;
+  width: 50vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.button {
+  width: 50vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+button {
+  background-color: black;
+  color: lightblue;
+  border-radius: 0.5rem;
+  border: none;
+  height: 5vh;
+  width: 10vw;
+}
+
+button:hover {
+  background-color: magenta;
+}
+
+button p {
+  font-size: 1.5vw;
+}
+
+.decoy-button {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  opacity: .5;
+}
+
+.post {
+  height: 50vh;
+  width: 50vw;
+  background-color: skyblue;
+  border: none;
+  font-size: 3vh;
+  -webkit-box-shadow: 0.25rem 0.5rem #888888;
+          box-shadow: 0.25rem 0.5rem #888888;
+}
+
+.picture {
+  background-color: skyblue;
+  border: none;
+  height: 3vh;
+  width: 20vw;
 }
 /*# sourceMappingURL=Creator.css.map */

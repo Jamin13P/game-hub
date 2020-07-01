@@ -1,6 +1,55 @@
 @import "./variables";
 
 .Creator {
-    background-color: $mainbackgroundcolor;
-    height: 85vh;
+  background-color: $mainbackgroundcolor;
+  height: 84vh;
+  @include flexCenter();
+}
+
+.interact {
+  height: 60vh;
+  width: 50vw;
+  @include flexCenter();
+  flex-direction: column;
+}
+
+.button {
+    width: 50vw;
+    @include flexCenter();
+}
+
+button {
+  background-color: $btncolor;
+  color: $mainbackgroundcolor;
+  border-radius: 0.5rem;
+  border: none;
+  height: 5vh;
+  width: 10vw;
+  &:hover {
+    background-color: $btnhover;
+  }
+  p {
+    font-size: 1.5vw;
+  }
+}
+
+.decoy-button {
+    filter: grayscale(100%);
+    opacity: .5
+}
+
+.post {
+    height: 50vh;
+    width: 50vw;
+    background-color: $authbackroundcolor;
+    border: none;
+    font-size: 3vh;
+    box-shadow: 0.25rem 0.5rem #888888;;
+}
+
+.picture {
+    background-color: $authbackroundcolor;
+    border: none;
+    height: 3vh;
+    width: 20vw;
 }
