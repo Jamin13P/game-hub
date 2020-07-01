@@ -6,7 +6,6 @@ import UserPost from "../UserPost/UserPost";
 
 const Account = (props) => {
   const [userPosts, setUserPosts] = useState([]);
-  const [editing, setEditing] = useState(false);
 
   useEffect(() => {
     if (props.user) {
@@ -23,22 +22,6 @@ const Account = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  }
-
-  function editPost(post_id, post, picture) {
-    axios
-      .put(`/api/post/${post_id}`, { post, picture })
-      .then(() => {
-        getUserPosts();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-      toggleEditing()
-  }
-
-  function toggleEditing() {
-    setEditing(!editing);
   }
 
   function deletePost(post_id) {
@@ -58,9 +41,7 @@ const Account = (props) => {
         return (
           <UserPost
             key={elem.post_id}
-            editing={editing}
-            toggleEditing={toggleEditing}
-            editPost={editPost}
+            getUserPosts={getUserPosts}
             deletePost={deletePost}
             elem={elem}
           />

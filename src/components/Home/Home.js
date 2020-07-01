@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import axios from "axios";
 import "./Home.css";
 
-const Home = () => {
+const Home = (props) => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {

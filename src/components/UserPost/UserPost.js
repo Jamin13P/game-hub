@@ -1,10 +1,28 @@
 import React, { useState } from "react";
+import axios from "axios"
 
 const UserPost = (props) => {
-  const { editing, toggleEditing, editPost, deletePost, elem } = props;
+  const { getUserPosts, deletePost, elem } = props;
 
   const [post, setPost] = useState(elem.post);
   const [picture, setPicture] = useState(elem.picture);
+  const [editing, setEditing] = useState(false);
+
+  function toggleEditing() {
+    setEditing(!editing);
+  }
+
+  function editPost(post_id, post, picture) {
+    axios
+      .put(`/api/post/${post_id}`, { post, picture })
+      .then(() => {
+        getUserPosts();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    toggleEditing();
+  }
 
   return (
     <div>
