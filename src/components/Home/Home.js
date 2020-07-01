@@ -18,13 +18,13 @@ const Home = (props) => {
   }, []);
 
   return (
-    <div>
+    <div className="Home">
       {posts.map((elem) => {
         return (
           <div key={elem.post_id}>
             <h4>{elem.username}</h4>
             {elem.picture === null || elem.picture === "" ? null : (
-              <img className="picture" src={elem.picture} alt="IMG" />
+              <img className="homePicture" src={elem.picture} alt="IMG" />
             )}
             <p>{elem.post}</p>
           </div>

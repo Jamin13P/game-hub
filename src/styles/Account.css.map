@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,QAAQ,CAAC;EACP,gBAAgB,ECHI,SAAS;CDI9B",
+    "sources": [
+        "Account.scss",
+        "_variables.scss"
+    ],
+    "names": [],
+    "file": "Account.css"
+}

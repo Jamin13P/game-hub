@@ -49,10 +49,10 @@ const Auth = (props) => {
           />
           <div className="smallAuthBtns">
             <button className="smallLoginBtn" onClick={login}>
-              Login
+              <p>Login</p>
             </button>
             <button className="smallRegisterBtn" onClick={register}>
-              Register
+              <p>Register</p>
             </button>
           </div>
         </div>
@@ -76,10 +76,10 @@ const Auth = (props) => {
           </div>
           <div className="bigAuthBtns">
             <button className="bigLoginBtn" onClick={login}>
-              Login
+              <p>Login</p>
             </button>
             <button className="bigRegisterBtn" onClick={register}>
-              Register
+              <p>Register</p>
             </button>
           </div>
         </header>

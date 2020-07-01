@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import routes from "./routes";
 import Nav from "./components/Nav/Nav";
-import "./App.css";
+import "./styles/App.css";
 import { withRouter } from "react-router-dom";
 
 class App extends Component {

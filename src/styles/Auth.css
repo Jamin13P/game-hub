@@ -1,3 +1,35 @@
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 15vh;
+  width: 100vw;
+  background-color: skyblue;
+  border-bottom: solid black 1px;
+}
+
+header button {
+  background-color: black;
+  color: lightblue;
+  border-radius: 0.5rem;
+  height: 5vh;
+  width: 10vw;
+}
+
+header button:hover {
+  background-color: magenta;
+}
+
+header button p {
+  font-size: 1.5vw;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -10,17 +42,17 @@
 }
 
 .smallAuth {
-  height: 100vh;
-  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 100vh;
+  width: 100vw;
 }
 
 .smallInteract {
@@ -32,25 +64,41 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-shadow: .25rem .5rem #888888;
-          box-shadow: .25rem .5rem #888888;
+  -webkit-box-shadow: 0.25rem 0.5rem #888888;
+          box-shadow: 0.25rem 0.5rem #888888;
+}
+
+.smallInteract button {
+  background-color: black;
+  color: lightblue;
+  border-radius: 0.5rem;
+  height: 4vh;
+  width: 10vw;
+}
+
+.smallInteract button:hover {
+  background-color: magenta;
+}
+
+.smallInteract button p {
+  font-size: 1.5vw;
 }
 
 .smallGameHub {
   font-family: "Lucida Console", Courier, monospace;
   font-style: italic;
-  font-size: 4rem;
   font-weight: 700;
+  font-size: 6vw;
 }
 
 .smallAuthBtns {
@@ -61,20 +109,9 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-}
-
-.smallLoginBtn,
-.smallRegisterBtn {
-  background-color: black;
-  color: lightblue;
-  border-radius: .5rem;
-  height: 2rem;
-  width: 4rem;
-}
-
-.smallLoginBtn:hover,
-.smallRegisterBtn:hover {
-  background-color: magenta;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (max-width: 900px) {
@@ -94,27 +131,11 @@
   width: 100vw;
 }
 
-.bigAuthHeader {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 15vh;
-  width: 100vw;
-  background-color: skyblue;
-  border-bottom: solid black 1px;
-}
-
 .bigGameHub {
   font-family: "Lucida Console", Courier, monospace;
   font-style: italic;
-  font-size: 4rem;
   font-weight: 700;
+  font-size: 6vw;
 }
 
 .bigAuthInputs {
@@ -135,29 +156,14 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 10vh;
   margin-right: 10vw;
-}
-
-.bigLoginBtn,
-.bigRegisterBtn {
-  background-color: black;
-  color: lightblue;
-  border-radius: .5rem;
-  height: 2rem;
-  width: 4rem;
-}
-
-.bigLoginBtn:hover,
-.bigRegisterBtn:hover {
-  background-color: magenta;
 }
 
 .about {

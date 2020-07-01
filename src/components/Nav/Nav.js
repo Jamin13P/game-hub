@@ -3,6 +3,7 @@ import { setUser } from "../../ducks/reducer";
 import { connect } from "react-redux";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
+import "../../styles/Nav.css";
 
 const Nav = (props) => {
   useEffect(() => {
@@ -29,14 +30,23 @@ const Nav = (props) => {
   }
 
   return (
-    <div>
-      <button onClick={() => props.history.push("/home")}>Home</button>
-      <button onClick={() => props.history.push("/creator")}>
-        Create Post
-      </button>
-      <button onClick={() => props.history.push("/account")}>Account</button>
-      <button onClick={logout}>Logout</button>
-    </div>
+      <header>
+        <div>
+          <h2 className="navGameHub">Game Hub</h2>
+        </div>
+        <button onClick={() => props.history.push("/home")}>
+          <p>Home</p>
+        </button>
+        <button onClick={() => props.history.push("/creator")}>
+          <p>Create Post</p>
+        </button>
+        <button onClick={() => props.history.push("/account")}>
+          <p>Account</p>
+        </button>
+        <button onClick={logout}>
+          <p>Logout</p>
+        </button>
+      </header>
   );
 };
 

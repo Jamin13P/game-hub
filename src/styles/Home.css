@@ -1,4 +1,8 @@
-.picture {
+.Home {
+  background-color: lightblue;
+}
+
+.homePicture {
   height: 33vh;
   width: 33vw;
 }

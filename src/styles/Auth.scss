@@ -1,147 +1,113 @@
+@import "./variables";
+@import "./header";
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .Auth {
-    background-color: lightblue;
-    height: 100vh;
-    width: 100vw;
+  background-color: $mainbackgroundcolor;
+  height: 100vh;
+  width: 100vw;
 }
 
 .smallAuth {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  @include flexCenter();
+  height: 100vh;
+  width: 100vw;
 }
 
 .smallInteract {
-    height: 48vh;
-    width: 48vw;
-    border: solid black 1px;
-    border-radius: 1rem;
-    background-color: skyblue;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    box-shadow: .25rem .5rem #888888;
+  height: 48vh;
+  width: 48vw;
+  border: solid black 1px;
+  border-radius: 1rem;
+  background-color: $authbackroundcolor;
+  @include flexCenter();
+  flex-direction: column;
+  box-shadow: 0.25rem 0.5rem #888888;
+  button {
+    background-color: $btncolor;
+    color: $mainbackgroundcolor;
+    border-radius: 0.5rem;
+    height: 4vh;
+    width: 10vw;
+    &:hover {
+        background-color: $btnhover;
+    }
+    p {
+      font-size: 1.5vw;
+    }
+  }
 }
 
 .smallGameHub {
-    font-family: "Lucida Console", Courier, monospace;
-    font-style: italic;
-    font-size: 4rem;
-    font-weight: 700;
+  font-family: $gamehubfont;
+  font-style: $gamehubstyle;
+  font-weight: $gamehubweight;
+  font-size: $gamehubsize;
 }
 
 .smallAuthBtns {
-    width: 25rem;
-    display: flex;
-    justify-content: space-evenly;
+  width: 25rem;
+  @include flexCenter();
 }
 
-.smallLoginBtn,
-.smallRegisterBtn
- {
-    background-color: black;
-    color: lightblue;
-    border-radius: .5rem;
-    height: 2rem;
-    width: 4rem
+@media (max-width: 900px) {
+  .bigAuth {
+    display: none;
+  }
 }
 
-.smallLoginBtn:hover,
-.smallRegisterBtn:hover
-{
-    background-color: magenta;
-}
-
-@media(max-width: 900px){
-    .bigAuth {
-        display: none
-    }
-}
-
-@media(min-width: 901px) {
-    .smallAuth {
-        display: none
-    }
+@media (min-width: 901px) {
+  .smallAuth {
+    display: none;
+  }
 }
 
 .bigAuth {
-    height: 100vh;
-    width: 100vw;
-}
-
-.bigAuthHeader {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 15vh;
-    width: 100vw;
-    background-color: skyblue;
-    border-bottom: solid black 1px;
+  height: 100vh;
+  width: 100vw;
 }
 
 .bigGameHub {
-    font-family: "Lucida Console", Courier, monospace;
-    font-style: italic;
-    font-size: 4rem;
-    font-weight: 700;
+  font-family: $gamehubfont;
+  font-style: $gamehubstyle;
+  font-weight: $gamehubweight;
+  font-size: $gamehubsize;
 }
 
 .bigAuthInputs {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 10vh;
-    width: 40vw;
+  @include flexCenter();
+  height: 10vh;
+  width: 40vw;
 }
-
 
 .bigAuthBtns {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 10vh;
-    margin-right: 10vw;
-}
-
-.bigLoginBtn,
-.bigRegisterBtn
- {
-    background-color: black;
-    color: lightblue;
-    border-radius: .5rem;
-    height: 2rem;
-    width: 4rem
-}
-
-.bigLoginBtn:hover,
-.bigRegisterBtn:hover
-{
-    background-color: magenta;
+  @include flexCenter();
+  height: 10vh;
+  margin-right: 10vw;
 }
 
 .about {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 84vh;
-    width: 100vw;
-    font-size: 2rem;
-    font-weight: 500;
-    word-wrap: normal;
+  @include flexCenter();
+  height: 84vh;
+  width: 100vw;
+  font-size: 2rem;
+  font-weight: 500;
+  word-wrap: normal;
 }
 
 .text {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    border: black 1px;
-    height: 80vh;
-    width: 50vw;
+  @include flexCenter();
+  border: black 1px;
+  height: 80vh;
+  width: 50vw;
 }

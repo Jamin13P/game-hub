@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "../../styles/Creator.css"
 
 const Creator = (props) => {
   const [newPost, setNewPost] = useState("");
@@ -32,7 +33,7 @@ const Creator = (props) => {
   }
 
   return (
-    <div>
+    <div className="Creator">
       {newPost === "" ? <button className="decoy-button" >Share</button> : <button className="real-button" onClick={createPost} >Share</button>}
       {!addPicture ? (
         <button onClick={toggleAddPicture}>Add Picture URL</button>

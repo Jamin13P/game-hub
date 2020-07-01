@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios"
+import axios from "axios";
+import "../../styles/UserPost.css";
 
 const UserPost = (props) => {
   const { getUserPosts, deletePost, elem } = props;
@@ -34,7 +35,7 @@ const UserPost = (props) => {
           onChange={(e) => setPicture(e.target.value)}
         />
       ) : (
-        <img className="picture" src={elem.picture} alt="IMG" />
+        <img className="userPicture" src={elem.picture} alt="IMG" />
       )}
       {editing ? (
         <input
