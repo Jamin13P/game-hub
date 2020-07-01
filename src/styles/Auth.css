@@ -97,8 +97,8 @@ header button p {
 .smallGameHub {
   font-family: "Lucida Console", Courier, monospace;
   font-style: italic;
-  font-weight: 700;
-  font-size: 6vw;
+  font-weight: 600;
+  font-size: 5vw;
 }
 
 .smallAuthBtns {
@@ -134,8 +134,8 @@ header button p {
 .bigGameHub {
   font-family: "Lucida Console", Courier, monospace;
   font-style: italic;
-  font-weight: 700;
-  font-size: 6vw;
+  font-weight: 600;
+  font-size: 5vw;
 }
 
 .bigAuthInputs {
@@ -163,11 +163,8 @@ header button p {
       -ms-flex-align: center;
           align-items: center;
   height: 10vh;
+  width: 25vw;
   margin-right: 10vw;
-}
-
-.bigRegisterBtn {
-  margin-left: 3vw;
 }
 
 .about {

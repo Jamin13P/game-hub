@@ -47,7 +47,7 @@ const Creator = (props) => {
           )}
           {!addPicture ? (
             <button onClick={toggleAddPicture}>
-              <p>Add Picture URL</p>
+              <p>Add Picture</p>
             </button>
           ) : (
             <button onClick={handleCancel}>

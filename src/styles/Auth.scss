@@ -87,11 +87,8 @@
 .bigAuthBtns {
   @include flexCenter();
   height: 10vh;
+  width: 25vw;
   margin-right: 10vw;
-}
-
-.bigRegisterBtn {
-  margin-left: 3vw;
 }
 
 .about {
