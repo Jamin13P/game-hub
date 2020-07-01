@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { setUser } from "../../ducks/reducer";
 import { connect } from "react-redux";
 import axios from "axios";
+import "../../styles/Auth.css";
 
 const Auth = (props) => {
   const [username, setUsername] = useState("");
@@ -32,19 +33,66 @@ const Auth = (props) => {
   }
 
   return (
-    <div>
-      <input
-        placeholder="Username"
-        type="text"
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        placeholder="Password"
-        type="password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={login} >Login</button>
-      <button onClick={register} >Register</button>
+    <div className="Auth">
+      <div className="smallAuth">
+        <div className="smallInteract">
+          <h2 className="smallGameHub">Game Hub</h2>
+          <input
+            placeholder="Username"
+            type="text"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+            placeholder="Password"
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <div className="smallAuthBtns">
+            <button className="smallLoginBtn" onClick={login}>
+              Login
+            </button>
+            <button className="smallRegisterBtn" onClick={register}>
+              Register
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className="bigAuth">
+        <header className="bigAuthHeader">
+          <div className="bigGameHubContainer">
+            <h2 className="bigGameHub">Game Hub</h2>
+          </div>
+          <div className="bigAuthInputs">
+            <input
+              placeholder="Username"
+              type="text"
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <input
+              placeholder="Password"
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="bigAuthBtns">
+            <button className="bigLoginBtn" onClick={login}>
+              Login
+            </button>
+            <button className="bigRegisterBtn" onClick={register}>
+              Register
+            </button>
+          </div>
+        </header>
+        <div className="about">
+          <div className="text">
+            <p>
+              Welcome to Game Hub! Game Hub is an environment where gamers across
+              the world could share their opinions about video
+              games as well as their experiences of gaming.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { setUser } from "../../ducks/reducer";
 import { connect } from "react-redux";
 import axios from "axios";
@@ -14,7 +14,7 @@ const Nav = (props) => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [props]);
 
   function logout() {
     axios
