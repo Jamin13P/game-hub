@@ -21,6 +21,7 @@ massive({
   })
   .catch((err) => console.log(err));
 
+app.use(express.static(`${__dirname}/../build`))
 app.use(express.json());
 
 app.use(
