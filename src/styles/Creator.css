@@ -1,6 +1,5 @@
 .Creator {
   background-color: lightblue;
-  height: 84vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12,7 +11,11 @@
           align-items: center;
 }
 
-.interact {
+.bigCreator {
+  height: 84vh;
+}
+
+.bigCreatorInteract {
   height: 70vh;
   width: 50vw;
   display: -webkit-box;
@@ -28,6 +31,32 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.smallCreatorInteract {
+  width: 80vw;
+  margin-left: 20vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.smallCreatorInteract button {
+  margin-bottom: 1rem;
+}
+
+.smallCreatorInteract input {
+  margin-bottom: 1rem;
 }
 
 .button {
@@ -81,5 +110,17 @@ button p {
   border: none;
   height: 3vh;
   width: 20vw;
+}
+
+@media (max-width: 900px) {
+  .bigCreatorInteract {
+    display: none;
+  }
+}
+
+@media (min-width: 901px) {
+  .smallCreatorInteract {
+    display: none;
+  }
 }
 /*# sourceMappingURL=Creator.css.map */

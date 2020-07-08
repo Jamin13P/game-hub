@@ -2,15 +2,30 @@
 
 .Creator {
   background-color: $mainbackgroundcolor;
-  height: 84vh;
   @include flexCenter();
 }
 
-.interact {
+.bigCreator {
+  height: 84vh;
+}
+
+.bigCreatorInteract {
   height: 70vh;
   width: 50vw;
   @include flexCenter();
   flex-direction: column;
+}
+
+.smallCreatorInteract{
+  @include smallPosition();
+  @include flexCenter();
+  flex-direction: column;
+  button {
+    margin-bottom: 1rem;
+  }
+  input {
+    margin-bottom: 1rem;
+  }
 }
 
 .button {
@@ -52,4 +67,16 @@ button {
     border: none;
     height: 3vh;
     width: 20vw;
+}
+
+@media (max-width: 900px) {
+  .bigCreatorInteract{
+    display: none;
+  }
+}
+
+@media (min-width: 901px) {
+  .smallCreatorInteract{
+    display: none;
+  }
 }

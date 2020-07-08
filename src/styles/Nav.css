@@ -38,6 +38,7 @@ header button p {
 }
 
 .smallNav {
+  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -47,17 +48,21 @@ header button p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 100vh;
   width: 20vw;
   background-color: skyblue;
-  border-bottom: solid black 1px;
+  border-right: solid black .5vw;
 }
 
 .smallNav button {
   background-color: black;
   color: lightblue;
   border-radius: 0.5rem;
-  height: 5vh;
+  height: 4vh;
   width: 10vw;
 }
 
@@ -71,5 +76,17 @@ header button p {
 
 .smallNav button h2 {
   font-size: 5vw;
+}
+
+@media (max-width: 900px) {
+  .bigNav {
+    display: none;
+  }
+}
+
+@media (min-width: 901px) {
+  .smallNav {
+    display: none;
+  }
 }
 /*# sourceMappingURL=Nav.css.map */

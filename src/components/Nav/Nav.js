@@ -30,7 +30,8 @@ const Nav = (props) => {
   }
 
   return (
-      <header>
+    <div className="Nav">
+      <header className="bigNav">
         <div>
           <h2 className="navGameHub">Game Hub</h2>
         </div>
@@ -47,6 +48,24 @@ const Nav = (props) => {
           <p>Logout</p>
         </button>
       </header>
+      <header className="smallNav">
+        <div>
+          <h2 className="navGameHub">Game Hub</h2>
+        </div>
+        <button onClick={() => props.history.push("/home")}>
+          <p>Home</p>
+        </button>
+        <button onClick={() => props.history.push("/creator")}>
+          <p>Create Post</p>
+        </button>
+        <button onClick={() => props.history.push("/account")}>
+          <p>Account</p>
+        </button>
+        <button onClick={logout}>
+          <p>Logout</p>
+        </button>
+      </header>
+    </div>
   );
 };
 

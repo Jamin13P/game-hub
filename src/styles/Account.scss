@@ -1,5 +1,28 @@
 @import "./variables";
 
-.Account {
+.bigAccount {
   background-color: $mainbackgroundcolor;
+}
+
+.smallAccount{
+  background-color: $mainbackgroundcolor;
+  @include smallPosition();
+}
+
+.posts {
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+@media (max-width: 900px) {
+  .bigAccount{
+    display: none;
+  }
+}
+
+@media (min-width: 901px) {
+  .smallAccount{
+    display: none;
+  }
 }

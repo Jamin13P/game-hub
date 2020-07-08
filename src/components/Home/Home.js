@@ -19,6 +19,7 @@ const Home = (props) => {
 
   return (
     <div className="Home">
+      <div className="bigHome">
       {posts.map((elem) => {
         return (
           <div key={elem.post_id}>
@@ -30,6 +31,20 @@ const Home = (props) => {
           </div>
         );
       })}
+      </div>
+      <div className="smallHome">
+      {posts.map((elem) => {
+        return (
+          <div key={elem.post_id}>
+            <h4>{elem.username}</h4>
+            {elem.picture === null || elem.picture === "" ? null : (
+              <img className="homePicture" src={elem.picture} alt="IMG" />
+            )}
+            <p>{elem.post}</p>
+          </div>
+        );
+      })}
+      </div>
     </div>
   );
 };

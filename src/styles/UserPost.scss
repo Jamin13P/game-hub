@@ -2,3 +2,7 @@
     height: 33vh;
     width: 33vw;
   }
+
+  .UserPost {
+    @include btnHandle();
+  }

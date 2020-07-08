@@ -38,16 +38,32 @@ const Account = (props) => {
 
   return (
     <div className="Account">
-      {userPosts.map((elem) => {
-        return (
-          <UserPost
-            key={elem.post_id}
-            getUserPosts={getUserPosts}
-            deletePost={deletePost}
-            elem={elem}
-          />
-        );
-      })}
+      <div className="bigAccount">
+        {userPosts.map((elem) => {
+          return (
+            <UserPost
+              key={elem.post_id}
+              getUserPosts={getUserPosts}
+              deletePost={deletePost}
+              elem={elem}
+            />
+          );
+        })}
+      </div>
+      <div className="smallAccount">
+        <div className="posts">
+          {userPosts.map((elem) => {
+            return (
+              <UserPost
+                key={elem.post_id}
+                getUserPosts={getUserPosts}
+                deletePost={deletePost}
+                elem={elem}
+              />
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 };

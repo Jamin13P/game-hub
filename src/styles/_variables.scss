@@ -15,7 +15,35 @@ $gamehubweight: 600;
 $gamehubsize: 5vw;
 
 @mixin flexCenter {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@mixin smallPosition {
+  width: 80vw;
+  margin-left: 20vw;
+}
+
+@mixin gameHub {
+  font-family: $gamehubfont;
+  font-style: $gamehubstyle;
+  font-weight: $gamehubweight;
+  font-size: $gamehubsize;
+}
+
+@mixin btnHandle {
+  button {
+    background-color: $btncolor;
+    color: $mainbackgroundcolor;
+    border-radius: 0.5rem;
+    height: 4vh;
+    width: 10vw;
+    &:hover {
+      background-color: $btnhover;
+    }
+    p {
+      font-size: 1.5vw;
+    }
   }
+}

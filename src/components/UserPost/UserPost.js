@@ -26,7 +26,7 @@ const UserPost = (props) => {
   }
 
   return (
-    <div>
+    <div className="UserPost">
       <h4>{elem.username}</h4>
       {editing ? (
         <input
@@ -48,12 +48,18 @@ const UserPost = (props) => {
       )}
       {editing ? (
         <button onClick={() => editPost(elem.post_id, post, picture)}>
-          Save
+          <p>Save</p>
         </button>
       ) : (
-        <button onClick={toggleEditing}>Edit</button>
+        <button onClick={toggleEditing}>
+          <p>Edit</p>
+        </button>
       )}
-      {editing ? <button onClick={toggleEditing}>Cancel</button> : <button onClick={() => deletePost(elem.post_id)}>Delete</button>}
+      {editing ? (
+        <button onClick={toggleEditing}><p>Cancel</p></button>
+      ) : (
+        <button onClick={() => deletePost(elem.post_id)}><p>Delete</p></button>
+      )}
     </div>
   );
 };

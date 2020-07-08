@@ -1,9 +1,28 @@
-.Home {
+.bigHome {
   background-color: lightblue;
 }
 
 .homePicture {
   height: 33vh;
   width: 33vw;
+}
+
+.smallHome {
+  background-color: lightblue;
+  height: 760vh;
+  width: 80vw;
+  margin-left: 20vw;
+}
+
+@media (max-width: 900px) {
+  .bigHome {
+    display: none;
+  }
+}
+
+@media (min-width: 901px) {
+  .smallHome {
+    display: none;
+  }
 }
 /*# sourceMappingURL=Home.css.map */

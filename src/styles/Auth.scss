@@ -27,43 +27,17 @@
   @include flexCenter();
   flex-direction: column;
   box-shadow: 0.25rem 0.5rem #888888;
-  button {
-    background-color: $btncolor;
-    color: $mainbackgroundcolor;
-    border-radius: 0.5rem;
-    height: 4vh;
-    width: 10vw;
-    &:hover {
-        background-color: $btnhover;
-    }
-    p {
-      font-size: 1.5vw;
-    }
-  }
+  @include btnHandle();
 }
 
 .smallGameHub {
-  font-family: $gamehubfont;
-  font-style: $gamehubstyle;
-  font-weight: $gamehubweight;
-  font-size: $gamehubsize;
+  @include gameHub();
 }
 
 .smallAuthBtns {
-  width: 25rem;
+  width: 18rem;
+  justify-content: space-evenly;
   @include flexCenter();
-}
-
-@media (max-width: 900px) {
-  .bigAuth {
-    display: none;
-  }
-}
-
-@media (min-width: 901px) {
-  .smallAuth {
-    display: none;
-  }
 }
 
 .bigAuth {
@@ -72,10 +46,7 @@
 }
 
 .bigGameHub {
-  font-family: $gamehubfont;
-  font-style: $gamehubstyle;
-  font-weight: $gamehubweight;
-  font-size: $gamehubsize;
+  @include gameHub();
 }
 
 .bigAuthInputs {
@@ -105,4 +76,16 @@
   border: black 1px;
   height: 80vh;
   width: 50vw;
+}
+
+@media (max-width: 900px) {
+  .bigAuth {
+    display: none;
+  }
+}
+
+@media (min-width: 901px) {
+  .smallAuth {
+    display: none;
+  }
 }
