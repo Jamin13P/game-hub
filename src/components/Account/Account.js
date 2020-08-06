@@ -38,7 +38,7 @@ const Account = (props) => {
 
   return (
     <div className="Account">
-      <div className="bigAccount">
+      {userPosts[0] ? (<div className="bigAccount">
         {userPosts.map((elem) => {
           return (
             <UserPost
@@ -49,8 +49,8 @@ const Account = (props) => {
             />
           );
         })}
-      </div>
-      <div className="smallAccount">
+      </div>) : <div className="bigMessageContainer"><h1 className="bigMessage">You don't have any posts</h1></div>}
+      {userPosts[0] ? (<div className="smallAccount">
         <div className="posts">
           {userPosts.map((elem) => {
             return (
@@ -63,7 +63,7 @@ const Account = (props) => {
             );
           })}
         </div>
-      </div>
+      </div>) : <div className="smallMessageContainer"><h3 className="smallMessage">You don't have any posts</h3></div>}
     </div>
   );
 };

@@ -1,11 +1,29 @@
-.bigAccount {
+.bigAccount,
+.bigMessageContainer {
   background-color: lightblue;
+  min-height: 84vh;
+  border: solid, black, 4px;
 }
 
-.smallAccount {
+.smallAccount,
+.smallMessageContainer {
   background-color: lightblue;
   width: 80vw;
+  height: 100vh;
   margin-left: 20vw;
+}
+
+.smallMessageContainer,
+.bigMessageContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .posts {
@@ -14,14 +32,23 @@
   overflow-y: scroll;
 }
 
+.smallMessage {
+  position: absolute;
+  right: 5vw;
+}
+
 @media (max-width: 900px) {
-  .bigAccount {
+  .bigAccount,
+  .bigMessage,
+  .bigMessageContainer {
     display: none;
   }
 }
 
 @media (min-width: 901px) {
-  .smallAccount {
+  .smallAccount,
+  .smallMessage,
+  .smallMessageContainer {
     display: none;
   }
 }

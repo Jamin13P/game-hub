@@ -35,7 +35,7 @@ const UserPost = (props) => {
           onChange={(e) => setPicture(e.target.value)}
         />
       ) : (
-        <img className="userPicture" src={elem.picture} alt="IMG" />
+        <img className="userPicture" src={elem.picture} alt="" />
       )}
       {editing ? (
         <input
