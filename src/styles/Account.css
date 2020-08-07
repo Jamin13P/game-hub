@@ -2,6 +2,7 @@
 .bigMessageContainer {
   background-color: lightblue;
   min-height: 84vh;
+  border: none;
 }
 
 .smallAccount,
