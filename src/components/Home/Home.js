@@ -19,7 +19,7 @@ const Home = (props) => {
 
   return (
     <div className="Home">
-      <div className="bigHome">
+      {posts[0] ? (<div className="bigHome">
       {posts.map((elem) => {
         return (
           <div key={elem.post_id}>
@@ -31,8 +31,8 @@ const Home = (props) => {
           </div>
         );
       })}
-      </div>
-      <div className="smallHome">
+      </div>) : (<div className="bigMessageContainer"><h1>There aren't any posts</h1></div>)}
+      {posts[0] ? (<div className="smallHome">
       {posts.map((elem) => {
         return (
           <div key={elem.post_id}>
@@ -44,7 +44,7 @@ const Home = (props) => {
           </div>
         );
       })}
-      </div>
+      </div>) : (<div className="smallMessageContainer"><h3>There aren't any posts</h3></div>)}
     </div>
   );
 };
