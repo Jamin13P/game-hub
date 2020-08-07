@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../../styles/UserPost.css";
+import "./UserPost.css";
 
 const UserPost = (props) => {
   const { getUserPosts, deletePost, elem } = props;

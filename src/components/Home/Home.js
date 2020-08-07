@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
-import "../../styles/Home.css";
+import "./Home.css";
 
 const Home = (props) => {
   const [posts, setPosts] = useState([]);

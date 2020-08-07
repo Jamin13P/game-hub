@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { setUser } from "../../ducks/reducer";
 import { connect } from "react-redux";
 import axios from "axios";
-import "../../styles/Auth.css";
+import "./Auth.css";
 
 const Auth = (props) => {
   const [username, setUsername] = useState("");
@@ -87,8 +87,7 @@ const Auth = (props) => {
           <div className="text">
             <p>
               Welcome to Game Hub! Game Hub is an environment where gamers across
-              the world could share their opinions about video
-              games as well as their experiences of gaming.
+              the world can share their opinions as well as their experiences of video games.
             </p>
           </div>
         </div>

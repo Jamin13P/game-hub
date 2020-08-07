@@ -1,5 +1,5 @@
-@import "./variables";
-@import "./header";
+@import "../../styles/header";
+@import "../../styles/variables";
 
 .navGameHub {
   @include gameHub();

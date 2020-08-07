@@ -3,7 +3,7 @@ import { setUser } from "../../ducks/reducer";
 import { connect } from "react-redux";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
-import "../../styles/Nav.css";
+import "./Nav.css";
 
 const Nav = (props) => {
   useEffect(() => {

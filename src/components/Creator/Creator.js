@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../../styles/Creator.css";
+import "./Creator.css";
 
 const Creator = (props) => {
   const [newPost, setNewPost] = useState("");

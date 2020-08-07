@@ -3,7 +3,7 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { setUser } from "../../ducks/reducer";
 import UserPost from "../UserPost/UserPost";
-import "../../styles/Account.css";
+import "./Account.css";
 
 const Account = (props) => {
   const [userPosts, setUserPosts] = useState([]);
