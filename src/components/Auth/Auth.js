@@ -8,18 +8,6 @@ const Auth = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  function register() {
-    axios
-      .post("/auth/register", { username, password })
-      .then((res) => {
-        props.setUser(res.data);
-        props.history.push("/home");
-      })
-      .catch((err) => {
-        alert(err.response.request.response);
-      });
-  }
-
   function login() {
     axios
       .post("/auth/login", { username, password })
@@ -30,6 +18,10 @@ const Auth = (props) => {
       .catch((err) => {
         alert(err.response.request.response);
       });
+  }
+
+  const toRegister = () => {
+    props.history.push("/register")
   }
 
   return (
@@ -51,7 +43,7 @@ const Auth = (props) => {
             <button className="smallLoginBtn" onClick={login}>
               <p>Login</p>
             </button>
-            <button className="smallRegisterBtn" onClick={register}>
+            <button className="smallRegisterBtn" onClick={toRegister}>
               <p>Register</p>
             </button>
           </div>
@@ -78,7 +70,7 @@ const Auth = (props) => {
             <button className="bigLoginBtn" onClick={login}>
               <p>Login</p>
             </button>
-            <button className="bigRegisterBtn" onClick={register}>
+            <button className="bigRegisterBtn" onClick={toRegister}>
               <p>Register</p>
             </button>
           </div>

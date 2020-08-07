@@ -23,7 +23,7 @@
   width: 48vw;
   border: solid black 1px;
   border-radius: 1rem;
-  background-color: $authbackroundcolor;
+  background-color: $authbackgroundcolor;
   @include flexCenter();
   flex-direction: column;
   box-shadow: 0.25rem 0.5rem #888888;

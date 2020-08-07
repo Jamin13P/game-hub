@@ -1,0 +1,45 @@
+@import "../../styles/variables";
+
+.Register {
+    background-color: $mainbackgroundcolor;
+    height: 100vh;
+    width: 100vw;
+    @include flexCenter();
+    button {
+        font-size: 2vw;
+    }
+}
+
+.registerField {
+    height: 75vh;
+    width: 50vw;
+    background-color: $authbackgroundcolor;
+    border-radius: 15px;
+    box-shadow: grey -1vh -1vh .25vh;
+    @include flexCenter();
+    flex-direction: column;
+}
+
+.registration {
+    @include flexCenter();
+    flex-direction: column;
+    input {
+        margin: 1vh;
+        border-radius: 5px;
+        position: relative;
+        bottom: 3vh
+    }
+    button {
+        position: absolute;
+        bottom: 28vh
+    }
+}
+
+.registerMessageContainer {
+    width: 30vw;
+}
+
+.registerMessage {
+    font-size: 2vw;
+    font-weight: 700;
+}

@@ -1,0 +1,78 @@
+.Register {
+  background-color: lightblue;
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Register button {
+  font-size: 2vw;
+}
+
+.registerField {
+  height: 75vh;
+  width: 50vw;
+  background-color: skyblue;
+  border-radius: 15px;
+  -webkit-box-shadow: grey -1vh -1vh .25vh;
+          box-shadow: grey -1vh -1vh .25vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.registration {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.registration input {
+  margin: 1vh;
+  border-radius: 5px;
+  position: relative;
+  bottom: 3vh;
+}
+
+.registration button {
+  position: absolute;
+  bottom: 28vh;
+}
+
+.registerMessageContainer {
+  width: 30vw;
+}
+
+.registerMessage {
+  font-size: 2vw;
+  font-weight: 700;
+}
+/*# sourceMappingURL=Register.css.map */

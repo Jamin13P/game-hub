@@ -11,7 +11,7 @@
   flex-direction: column;
   height: 100vh;
   width: 20vw;
-  background-color: $authbackroundcolor;
+  background-color: $authbackgroundcolor;
   border-right: solid black .5vw;
   @include btnHandle();
     h2 {
